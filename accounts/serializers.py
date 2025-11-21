@@ -32,6 +32,12 @@ class EmployeeCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user = self.context["request"].user
+
+        if hasattr(user, "employee"):
+            raise serializers.ValidationError(
+                {"detail": "Employee profile already exists for this user."}
+            )
+
         return Employee.objects.create(user=user, **validated_data)
 
 
