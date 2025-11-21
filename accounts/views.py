@@ -18,6 +18,7 @@ class RegisterViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
+    queryset = Employee.objects.all()
 
     def get_permissions(self):
         if self.action in ["list", "retrieve", "update", "partial_update", "destroy"]:
