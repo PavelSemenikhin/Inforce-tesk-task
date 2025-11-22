@@ -39,6 +39,7 @@ class VoteResultApiView(APIView):
 
 class WinnerApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]
+    serializer_class = None
 
     def get(self, request: HttpRequest) -> Response:
         winner = services.get_today_winner()

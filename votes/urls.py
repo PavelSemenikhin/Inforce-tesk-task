@@ -6,7 +6,7 @@ from votes.views import VoteResultApiView, VoteViewSet, WinnerApiView
 app_name = "votes"
 
 router = DefaultRouter()
-router.register("votes", VoteViewSet, basename="votes")
+router.register("", VoteViewSet, basename="votes")
 
 urlpatterns = [
     path("", include(router.urls)),
