@@ -1,6 +1,7 @@
 from datetime import date
 
 from rest_framework import viewsets, permissions
+from rest_framework.response import Response
 
 from menus.models import Menu
 from menus.serializers import MenuReadSerializer, MenuCreateSerializer
@@ -10,6 +11,14 @@ class MenuViewSet(viewsets.ModelViewSet):
     """
     Endpoints for  Menu with dishes like JSON field.
     """
+
+    def list(self, request, *args, **kwargs):
+        version = request.app_version
+
+        if version == "1.0":
+            return Response({"menus": super().list(request).data})
+
+        return super().list(request)
 
     def get_queryset(self):
         if self.action == "list":
