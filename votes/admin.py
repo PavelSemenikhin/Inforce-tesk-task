@@ -1,3 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
+from votes.models import Vote
+
+
+@admin.register(Vote)
+class VoteAdmin(admin.ModelAdmin):
+    list_display = (
+        "employee__full_name",
+        "menu__restaurant__name",
+        "date",
+    )
