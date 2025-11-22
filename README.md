@@ -23,7 +23,7 @@ Supports backward compatibility for older mobile app versions via custom middlew
 ### 1. Clone repository
 ```bash
 git clone https://github.com/PavelSemenikhin/Inforce-tesk-task.git
-cd <project-folder>
+cd inforce-test-task
 ```
 
 ### 2. Create `.env` file in project root:
