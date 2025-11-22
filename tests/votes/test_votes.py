@@ -21,9 +21,7 @@ def test_vote_success():
 
     restaurant = Restaurant.objects.create(name="KFC")
     menu = Menu.objects.create(
-        restaurant=restaurant,
-        date=timezone.now().date(),
-        dishes={"a": 1}
+        restaurant=restaurant, date=timezone.now().date(), dishes={"a": 1}
     )
 
     resp = client.post("/api/votes/", {"menu": menu.id}, format="json")
@@ -43,11 +41,7 @@ def test_vote_twice_fails():
     restaurant = Restaurant.objects.create(name="KFC")
 
     today = timezone.now().date()
-    menu = Menu.objects.create(
-        restaurant=restaurant,
-        date=today,
-        dishes={"x": 1}
-    )
+    menu = Menu.objects.create(restaurant=restaurant, date=today, dishes={"x": 1})
 
     Vote.objects.create(employee=emp, menu=menu, date=today)
 
@@ -72,7 +66,7 @@ def test_vote_wrong_date_fails():
     menu = Menu.objects.create(
         restaurant=restaurant,
         date=yesterday,
-        dishes={"a": 1}
+        dishes={"a": 1},
     )
 
     resp = client.post("/api/votes/", {"menu": menu.id}, format="json")
