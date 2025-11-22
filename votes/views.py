@@ -1,15 +1,11 @@
-import datetime
-
-from django.db.models.aggregates import Count
 from django.http import HttpRequest
-from rest_framework import viewsets, permissions, status
+from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from menus.models import Menu
 from votes import services
 from votes.models import Vote
-from votes.serializers import VoteReadSerializer, VoteCreateSerializer
+from votes.serializers import VoteCreateSerializer, VoteReadSerializer
 
 
 class VoteViewSet(viewsets.ModelViewSet):

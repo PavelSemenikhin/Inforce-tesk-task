@@ -1,10 +1,10 @@
 from datetime import date
 
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 from rest_framework.response import Response
 
 from menus.models import Menu
-from menus.serializers import MenuReadSerializer, MenuCreateSerializer
+from menus.serializers import MenuCreateSerializer, MenuReadSerializer
 
 
 class MenuViewSet(viewsets.ModelViewSet):

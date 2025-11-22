@@ -1,4 +1,4 @@
-from rest_framework import viewsets, permissions
+from rest_framework import permissions, viewsets
 from rest_framework.permissions import IsAdminUser
 
 from restaurants.models import Restaurant

@@ -1,11 +1,11 @@
 from django.contrib.auth import get_user_model
-from rest_framework import viewsets, permissions, mixins
+from rest_framework import mixins, permissions, viewsets
 
 from accounts.models import Employee
 from accounts.serializers import (
-    RegisterSerializer,
     EmployeeCreateSerializer,
     EmployeeReadSerializer,
+    RegisterSerializer,
 )
 
 User = get_user_model()

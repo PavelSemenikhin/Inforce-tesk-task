@@ -45,6 +45,7 @@ def get_vote_result():
     )
     return results
 
+
 def get_today_winner():
     today = date.today()
 

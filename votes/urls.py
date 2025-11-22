@@ -1,7 +1,7 @@
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework.routers import DefaultRouter
 
-from votes.views import VoteViewSet, VoteResultApiView, WinnerApiView
+from votes.views import VoteResultApiView, VoteViewSet, WinnerApiView
 
 app_name = "votes"
 
