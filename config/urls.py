@@ -20,6 +20,11 @@ urlpatterns = [
         name="menus",
     ),
     path(
+        "api/votes/",
+        include("votes.urls"),
+        name="votes",
+    ),
+    path(
         "api/docs/",
         SpectacularSwaggerView.as_view(url_name="schema"),
         name="swagger-ui",
