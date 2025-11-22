@@ -9,6 +9,10 @@ from votes.serializers import VoteCreateSerializer, VoteReadSerializer
 
 
 class VoteViewSet(viewsets.ModelViewSet):
+    """
+    Endpoint for creating new votes.
+    """
+
     queryset = Vote.objects.all()
 
     def get_permissions(self):
@@ -29,6 +33,10 @@ class VoteViewSet(viewsets.ModelViewSet):
 
 
 class VoteResultApiView(APIView):
+    """
+    Endpoint for vote results.
+    """
+
     permission_classes = [permissions.IsAuthenticated]
 
     @staticmethod
@@ -38,6 +46,10 @@ class VoteResultApiView(APIView):
 
 
 class WinnerApiView(APIView):
+    """
+    Endpoint for result vote winner.
+    """
+
     permission_classes = [permissions.IsAuthenticated]
     serializer_class = None
 

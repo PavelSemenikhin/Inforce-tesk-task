@@ -5,6 +5,10 @@ from restaurants.serializers import RestaurantSerializer
 
 
 class RestaurantViewSet(viewsets.ModelViewSet):
+    """
+    Endpoint for creating new restaurants.
+    """
+
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
 

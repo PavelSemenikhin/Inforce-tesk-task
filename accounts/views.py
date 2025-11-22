@@ -12,12 +12,20 @@ User = get_user_model()
 
 
 class RegisterViewSet(mixins.CreateModelMixin, viewsets.GenericViewSet):
+    """
+    Endpoint for registering new users.
+    """
+
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = (permissions.AllowAny,)
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
+    """
+    Endpoint for creating new employees.
+    """
+
     queryset = Employee.objects.all()
 
     def get_permissions(self):
